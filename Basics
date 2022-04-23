@@ -1,0 +1,26 @@
+// SPDX-License-Identifier: GPL-3.0
+
+// pragma line - what version compiling should be running
+// ^ - anything above; keep version up to date
+pragma solidity ^0.8.0;
+
+// single line comment
+/*
+paragraph comments
+*/
+
+// NatSpec Format - https://docs.soliditylang.org/en/v0.8.13/natspec-format.html
+// commenting format
+// we can be intentional about our comments
+// informative messages
+
+// everything is contained within this 'contract' box
+// every smart contract has a unique address that can be interacted with
+/// @title The best smart contract
+/// @author KyleC
+/// @dev Please use this in this or that way
+contract MyContract {
+
+
+
+}
