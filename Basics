@@ -4,23 +4,51 @@
 // ^ - anything above; keep version up to date
 pragma solidity ^0.8.0;
 
-// single line comment
+// single-line comment
 /*
-paragraph comments
+multi-line comment
 */
-
-// NatSpec Format - https://docs.soliditylang.org/en/v0.8.13/natspec-format.html
+// NatSpec comment - https://docs.soliditylang.org/en/v0.8.13/natspec-format.html
 // commenting format
 // we can be intentional about our comments
 // informative messages
+/**
+NatSpec multi-line comment
+*/
 
 // everything is contained within this 'contract' box
 // every smart contract has a unique address that can be interacted with
 /// @title The best smart contract
 /// @author KyleC
 /// @dev Please use this in this or that way
+// define variable - string public name
+// what we did here was create a 'contract call' to read data; this doesnt send a transaction and it costs nothing
+// 'public' creates a 'getter'; allows smart contract to get/retrieve
+// we can create 'setters' or functions that allow something to happen; this does send a transaction and has a cost
+// let's create a function that will update the name
+// function naming convention - CamelCase
+// Deploy > name (Kyle) > updateName > name (John)
+// we can add 'parameters' in the function (); usually start with an _
+// to make this possible, we need to also declare the type; 'string'; also add 'memory'
+// we can use this new function for a user to input their own name
 contract MyContract {
+    string public name = "Kyle";
 
+    function updateName() public {
+        name = "John";
+    }
 
-
+    function updateNameName(string memory _newName) public {
+        name = _newName;
+    }
 }
+
+
+
+
+
+
+
+
+
+
