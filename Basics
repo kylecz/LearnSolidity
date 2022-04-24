@@ -46,6 +46,52 @@ contract MyContract {
     }
 }
 
+// TYPES
+// 'string' is not a native primitive type; it consists of many bytes resulting in a lot of gas
+// therefore, we should rely on primitive types moreso
+
+// Types - format of data; https://docs.soliditylang.org/en/v0.8.13/types.html
+// types define variables that can then be used with logical operators
+
+
+contract MyTypes {
+    bool myBoolean = false; // if we do not declare the boolean, it will default to false
+
+    uint256 myUint = 4564563;  // uint - unsigned int.  256 is the available storage space of the numeric value, allowing us to potentially store a large number
+    // a computer can only handle so much before it 'overflows'; if the value went above this uint value, then that would result in overflow and the value would change to 0
+    uint myUint8 = 255;  // 0 - 255; 2^8
+
+    int8 myInt = -127;  // int - signed int.  int8 can only go from -127 to 128
+
+    // address type
+    address myAddress = 0xE20BE2708Df393F3102f4d70f47DDc549f90935D;
+    address myContractAddress = 0xD7ACd2a9FD159E69Bb102A1ca21C9a3e3A5F771B;
+
+    // currently, the variables we created were deployed in a 'private' 'scope'
+    // 3 scopes: public, private, internal
+    // everything within the contract scope has access to everything else within that contract scope
+    // there's also the main blockchain scope
+    // let's add scope
+
+    // 'public' creates internal 'getter' function
+    // now when we deploy, we can see these variables that we can call
+    bool public myBoolean2 = false;
+    uint256 public myUint2 = 798456;
+    address public myAddress2 = 0xE20BE2708Df393F3102f4d70f47DDc549f90935D;
+
+    // 'private' variables can only be used within this smart contract (MyTypes)
+    // private is default if we dont declare
+
+    bool private myBoolean3 = false;
+    uint256 private myUint3 = 798456;
+    address private myAddress3 = 0xE20BE2708Df393F3102f4d70f47DDc549f90935D;
+
+    // 'internal' - giving access to other smart contracts
+    bool internal myBoolean4 = false;
+    uint256 internal myUint4 = 798456;
+    address internal myAddress4 = 0xE20BE2708Df393F3102f4d70f47DDc549f90935D;
+}
+
 
 
 
